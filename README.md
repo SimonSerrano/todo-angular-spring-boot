@@ -134,7 +134,7 @@ This is an example of how to list things you need to use the software and how to
    ```
 4. Start the frontend
    ```sh
-   (cd frontend && )
+   (cd frontend && npm start)
    ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
