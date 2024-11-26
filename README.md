@@ -85,6 +85,8 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
+This project is a simple Todo App using Spring Boot and Angular. There are many great Todo apps already on GitHub but this one is my own. This is to train myself on technologies I am not used to and keep myself up to date. The backend will depend on Spring WebFlux instead of the usual Spring MVC.
+
 Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `SimonSerrano`, `todo-angular-spring-boot`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `Simple Todo App`, `Simple Todo App built with Angular and Spring boot`
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -111,10 +113,10 @@ To get a local copy up and running follow these simple example steps.
 
 This is an example of how to list things you need to use the software and how to install them.
 
-* Java 17 or later
+* Java 21 or later
 * Maven 3.5 or later
 * Node.js 18 or later
-* Docker
+* Docker 20 or later
 
 ### Installation
 
@@ -122,18 +124,17 @@ This is an example of how to list things you need to use the software and how to
    ```sh
    git clone https://github.com/SimonSerrano/todo-angular-spring-boot.git
    ```
-2. Install NPM packages
-   ```sh
-   npm install
+2. Install frontend dependencies
+```sh
+   (cd frontend && npm i)
    ```
-3. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
-   ```
-4. Change git remote url to avoid accidental pushes to base project
+3. Start the backend
    ```sh
-   git remote set-url origin SimonSerrano/todo-angular-spring-boot
-   git remote -v # confirm the changes
+   (cd backend && mvn spring-boot:run)
+   ```
+4. Start the frontend
+   ```sh
+   (cd frontend && )
    ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
