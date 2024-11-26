@@ -87,7 +87,6 @@
 
 This project is a simple Todo App using Spring Boot and Angular. There are many great Todo apps already on GitHub but this one is my own. This is to train myself on technologies I am not used to and keep myself up to date. The backend will depend on Spring WebFlux instead of the usual Spring MVC.
 
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `SimonSerrano`, `todo-angular-spring-boot`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `Simple Todo App`, `Simple Todo App built with Angular and Spring boot`
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -173,7 +172,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 [license-shield]: https://img.shields.io/github/license/SimonSerrano/todo-angular-spring-boot.svg?style=for-the-badge
 [license-url]: https://github.com/SimonSerrano/todo-angular-spring-boot/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/linkedin_username
+[linkedin-url]: https://linkedin.com/in/simon-serrano
 [product-screenshot]: images/screenshot.png
 [Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
 [Next-url]: https://nextjs.org/
