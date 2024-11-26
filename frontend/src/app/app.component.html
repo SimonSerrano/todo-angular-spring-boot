@@ -1,0 +1,17 @@
+<main>
+  <mat-grid-list style="height:100%" cols="1" rowHeight="fit">
+    <mat-grid-tile>
+      <h1>{{ title }}</h1>
+    </mat-grid-tile>
+    <mat-grid-tile rowspan="3">
+      <task-list style="height:100%"></task-list>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <task-form></task-form>
+    </mat-grid-tile>
+  </mat-grid-list>
+
+</main>
+
+
+<router-outlet />

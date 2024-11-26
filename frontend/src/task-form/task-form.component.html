@@ -1,0 +1,16 @@
+<mat-card class="container" appearance="outlined">
+  <mat-card-content>
+    <form #formDirective="ngForm" (submit)="onSubmit(formDirective)">
+      <mat-form-field>
+        <mat-label>Title</mat-label>
+        <input id="title" name="title" type="text" required minlength="1"
+          matInput placeholder="Empty the bin" [formControl]="titleFormControl"
+          [errorStateMatcher]="matcher">
+        @if (titleFormControl.hasError('required')) {
+        <mat-error>Title is <strong>required</strong></mat-error>
+        }
+      </mat-form-field>
+      <button type="submit" mat-button>Create task</button>
+    </form>
+  </mat-card-content>
+</mat-card>

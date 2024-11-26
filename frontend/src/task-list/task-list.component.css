@@ -1,0 +1,10 @@
+.list-container {
+  height: 100%;
+  padding: 1rem;
+}
+
+.list {
+  overflow-y: auto;
+  max-height: 100%;
+}
+
