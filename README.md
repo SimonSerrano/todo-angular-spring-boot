@@ -121,21 +121,21 @@ This is an example of how to list things you need to use the software and how to
 ### Installation
 
 1. Clone the repo
-   ```sh
-   git clone https://github.com/SimonSerrano/todo-angular-spring-boot.git
-   ```
+  ```sh
+  git clone https://github.com/SimonSerrano/todo-angular-spring-boot.git
+  ```
 2. Install frontend dependencies
-```sh
-   (cd frontend && npm i)
-   ```
+  ```sh
+  (cd frontend && npm i)
+  ```
 3. Start the backend
-   ```sh
-   (cd backend && mvn spring-boot:run)
-   ```
+  ```sh
+  (cd backend && mvn spring-boot:run)
+  ```
 4. Start the frontend
-   ```sh
-   (cd frontend && npm start)
-   ```
+  ```sh
+  (cd frontend && npm start)
+  ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
