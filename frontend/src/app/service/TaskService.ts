@@ -15,7 +15,9 @@ export class TaskService {
   }
 
   getTasks() {
-    this.http.get<Task[]>(`${this.url}/tasks`).subscribe(tasks => this.tasks.next(tasks.reverse()));
+    this.http.get<Task[]>(`${this.url}/tasks`).subscribe(
+      tasks => this.tasks.next(tasks.reverse())
+    );
   }
 
   createTask(title: string) {
