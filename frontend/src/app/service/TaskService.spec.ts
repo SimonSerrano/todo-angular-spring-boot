@@ -1,6 +1,5 @@
 import { TaskService } from './TaskService';
 import { HttpClient } from '@angular/common/http';
-import { TestBed } from '@angular/core/testing';
 import { Task } from '../model/Task';
 import { Observable } from 'rxjs';
 

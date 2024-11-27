@@ -29,7 +29,7 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 }
 
 @Component({
-  selector: 'task-form',
+  selector: 'app-task-form',
   imports: [
     FormsModule,
     MatFormFieldModule,
@@ -48,13 +48,11 @@ export class TaskFormComponent {
 
   onSubmit(formDirective: NgForm) {
     if (this.titleFormControl.valid && this.titleFormControl.value) {
-      this.taskService
-        .createTask(this.titleFormControl.value)
-        .subscribe(uuid => {
-          this.taskService.getTasks();
-          formDirective.resetForm();
-          this.titleFormControl.reset();
-        });
+      this.taskService.createTask(this.titleFormControl.value).subscribe(() => {
+        this.taskService.getTasks();
+        formDirective.resetForm();
+        this.titleFormControl.reset();
+      });
     }
   }
 }

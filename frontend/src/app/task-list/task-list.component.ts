@@ -7,7 +7,7 @@ import { NgFor } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 
 @Component({
-  selector: 'task-list',
+  selector: 'app-task-list',
   imports: [MatListModule, NgFor, MatCardModule],
   templateUrl: './task-list.component.html',
   styleUrl: './task-list.component.css',
