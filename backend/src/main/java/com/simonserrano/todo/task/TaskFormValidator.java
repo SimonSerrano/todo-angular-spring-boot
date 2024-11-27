@@ -1,5 +1,7 @@
 package com.simonserrano.todo.task;
 
+import java.util.Objects;
+
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
@@ -16,7 +18,7 @@ public class TaskFormValidator implements Validator {
     ValidationUtils.rejectIfEmpty(errors, "title", "title.empty");
 
     TaskForm tf = (TaskForm) target;
-    if (tf.getTitle().length() < 1) {
+    if (!Objects.isNull(tf.getTitle()) && tf.getTitle().length() < 1) {
       errors.rejectValue("title", "title.too.short");
     }
   }
