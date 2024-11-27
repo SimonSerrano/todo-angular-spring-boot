@@ -31,6 +31,16 @@ public class Task {
     return title;
   }
 
+  protected Task setId(UUID id) {
+    this.id = id;
+    return this;
+  }
+
+  protected Task setTitle(String title) {
+    this.title = title;
+    return this;
+  }
+
   @Override
   public int hashCode() {
     final int prime = 31;

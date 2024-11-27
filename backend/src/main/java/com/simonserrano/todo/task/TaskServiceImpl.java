@@ -1,8 +1,13 @@
 package com.simonserrano.todo.task;
 
+import java.util.Optional;
+import java.util.UUID;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
+import org.springframework.web.server.ResponseStatusException;
 
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -30,6 +35,17 @@ public class TaskServiceImpl implements TaskService {
       Task task = new Task(taskForm.getTitle());
       Task savedTask = taskRepository.save(task);
       return savedTask;
+    }).subscribeOn(jdbScheduler);
+  }
+
+  @Override
+  public Mono<Task> findById(UUID uuid) {
+    return Mono.fromCallable(() -> {
+      Optional<Task> task = taskRepository.findById(uuid);
+      if (!task.isPresent()) {
+        throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+      }
+      return task.get();
     }).subscribeOn(jdbScheduler);
   }
 
