@@ -1,0 +1,7 @@
+<mat-dialog-content>
+  <h3 mat-dialog-title>{{ task?.title! }}</h3>
+  <mat-chip disabled>{{ task?.id! }}</mat-chip> 
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button (click)="cancel()">Cancel</button>
+</mat-dialog-actions>

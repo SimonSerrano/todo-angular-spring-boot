@@ -5,7 +5,7 @@ import { Subject } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class TaskService {
-  private url = 'http://localhost:8080';
+  private url = 'http://localhost:8080/tasks';
 
   public tasks = new Subject<Task[]>();
 
@@ -13,11 +13,15 @@ export class TaskService {
 
   getTasks() {
     this.http
-      .get<Task[]>(`${this.url}/tasks`)
+      .get<Task[]>(this.url)
       .subscribe(tasks => this.tasks.next(tasks.reverse()));
   }
 
   createTask(title: string) {
-    return this.http.post<string>(`${this.url}/tasks`, { title });
+    return this.http.post<string>(this.url, { title });
+  }
+
+  getTask(uuid: string) {
+    return this.http.get<Task>(`${this.url}/${uuid}`);
   }
 }

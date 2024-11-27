@@ -4,17 +4,23 @@ import { TaskService } from '../service/TaskService';
 import { TaskListComponent } from './task-list.component';
 import { BehaviorSubject } from 'rxjs';
 import { Task } from '../model/Task';
+import { MatDialog } from '@angular/material/dialog';
 
-describe('TaskListComponent', () => {
+fdescribe('TaskListComponent', () => {
   let taskServiceSpy: jasmine.SpyObj<TaskService>;
+  let dialogSpy: jasmine.SpyObj<MatDialog>;
 
   beforeEach(async () => {
     taskServiceSpy = jasmine.createSpyObj<TaskService>('TaskService', [
       'getTasks',
       'tasks',
     ]);
+    dialogSpy = jasmine.createSpyObj<MatDialog>('MatDialog', ['open']);
     await TestBed.configureTestingModule({
-      providers: [{ provide: TaskService, useValue: taskServiceSpy }],
+      providers: [
+        { provide: TaskService, useValue: taskServiceSpy },
+        { provide: MatDialog, useValue: dialogSpy },
+      ],
       imports: [TaskListComponent, NoopAnimationsModule],
     }).compileComponents();
   });
@@ -29,7 +35,7 @@ describe('TaskListComponent', () => {
     );
   });
 
-  fit('should render task list', () => {
+  it('should render task list', () => {
     const tasks = [
       { id: 'toto', title: 'test' },
       { id: 'tata', title: 'haha' },
@@ -54,5 +60,20 @@ describe('TaskListComponent', () => {
     expect(
       matListItems[1].querySelector('span[role="subtitle"]')?.textContent
     ).toContain(tasks[1].id);
+  });
+
+  it('should open dialog with task detail on click', () => {
+    const tasks = [
+      { id: 'toto', title: 'test' },
+      { id: 'tata', title: 'haha' },
+    ];
+    taskServiceSpy.tasks = new BehaviorSubject(tasks);
+    const fixture = TestBed.createComponent(TaskListComponent);
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement as HTMLElement;
+    const firstListItem = compiled.querySelector('mat-list-item');
+
+    (firstListItem as HTMLElement | null)?.click();
+    expect(dialogSpy.open.calls.count()).toBe(1);
   });
 });

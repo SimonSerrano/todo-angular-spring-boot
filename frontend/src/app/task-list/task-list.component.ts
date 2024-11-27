@@ -5,6 +5,8 @@ import { Subscription } from 'rxjs';
 import { Task } from '../model/Task';
 import { NgFor } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
+import { MatDialog } from '@angular/material/dialog';
+import { TaskDetailComponent } from '../task-detail/task-detail.component';
 
 @Component({
   selector: 'app-task-list',
@@ -17,6 +19,11 @@ export class TaskListComponent implements OnInit, OnDestroy {
   taskService = inject(TaskService);
   subscription?: Subscription;
   tasks: Task[] = [];
+  dialog = inject(MatDialog);
+
+  openDialog(uuid: string) {
+    this.dialog.open(TaskDetailComponent, { data: uuid });
+  }
 
   ngOnInit() {
     this.subscription = this.taskService.tasks.subscribe(tasks => {
