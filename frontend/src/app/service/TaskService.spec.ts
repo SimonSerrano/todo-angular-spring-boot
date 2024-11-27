@@ -13,7 +13,7 @@ describe('TaskService', () => {
     taskService = new TaskService(httpClientSpy);
   })
 
-  fit('should get the tasks using http client', (done: DoneFn) => {
+  it('should get the tasks using http client', (done: DoneFn) => {
     const expectedTasks: Task[] = [
       { id: 'toto', title: 'hello' },
       { id: 'tata', title: 'world' },
@@ -39,7 +39,7 @@ describe('TaskService', () => {
 
   })
 
-  fit('should create a new task using http client', (done: DoneFn) => {
+  it('should create a new task using http client', (done: DoneFn) => {
 
     const expectedUuid = 'toto';
 
