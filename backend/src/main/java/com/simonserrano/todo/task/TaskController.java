@@ -37,12 +37,14 @@ public class TaskController {
 
   @GetMapping
   @ResponseBody
+  @CrossOrigin(origins = "http://localhost:4200")
   public Flux<Task> getTasks() {
     return taskService.findAll();
   }
 
   @GetMapping("{id}")
   @ResponseBody
+  @CrossOrigin(origins = "http://localhost:4200")
   public Mono<Task> getTaskById(@PathVariable("id") UUID uuid) {
     return taskService.findById(uuid);
   }
