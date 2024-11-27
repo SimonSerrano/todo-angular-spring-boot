@@ -1,7 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Task } from "../model/Task";
-import { BehaviorSubject, Subject } from "rxjs";
+import { Subject } from "rxjs";
 
 @Injectable({ providedIn: 'root' })
 export class TaskService {
