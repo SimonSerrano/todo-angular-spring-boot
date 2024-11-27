@@ -5,8 +5,8 @@
   <mat-card-content class="list">
     <mat-list role="list">
       <mat-list-item role="listitem" *ngFor="let task of tasks">
-        <span matListItemTitle>{{ task.title }}</span>
-        <span matListItemLine>{{ task.id }}</span>
+        <span role="title" matListItemTitle>{{ task.title }}</span>
+        <span role="subtitle" matListItemLine>{{ task.id }}</span>
       </mat-list-item>
     </mat-list>
   </mat-card-content>
