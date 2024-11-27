@@ -9,12 +9,14 @@ describe('AppComponent', () => {
   let httpClientSpy: jasmine.SpyObj<HttpClient>;
 
   beforeEach(async () => {
-    httpClientSpy = jasmine.createSpyObj<HttpClient>('HttpClient', ['get', 'post']);
+    httpClientSpy = jasmine.createSpyObj<HttpClient>('HttpClient', [
+      'get',
+      'post',
+    ]);
     await TestBed.configureTestingModule({
       providers: [{ provide: HttpClient, useValue: httpClientSpy }],
       imports: [AppComponent, NoopAnimationsModule],
     }).compileComponents();
-
   });
 
   it('should create the app', () => {
@@ -30,16 +32,17 @@ describe('AppComponent', () => {
   });
 
   it('should render title', () => {
-
     const expectedTasks: Task[] = [
       { id: 'toto', title: 'hello' },
       { id: 'tata', title: 'world' },
     ];
 
-    httpClientSpy.get.and.returnValue(new Observable((subscriber) => {
-      subscriber.next(expectedTasks);
-      subscriber.complete();
-    }));
+    httpClientSpy.get.and.returnValue(
+      new Observable(subscriber => {
+        subscriber.next(expectedTasks);
+        subscriber.complete();
+      })
+    );
 
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();

@@ -1,6 +1,13 @@
 import { Component, inject } from '@angular/core';
 import { TaskService } from '../service/TaskService';
-import { FormControl, FormGroupDirective, FormsModule, NgForm, ReactiveFormsModule, Validators } from '@angular/forms';
+import {
+  FormControl,
+  FormGroupDirective,
+  FormsModule,
+  NgForm,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { ErrorStateMatcher } from '@angular/material/core';
@@ -8,17 +15,31 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 
 export class MyErrorStateMatcher implements ErrorStateMatcher {
-  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
+  isErrorState(
+    control: FormControl | null,
+    form: FormGroupDirective | NgForm | null
+  ): boolean {
     const isSubmitted = form && form.submitted;
-    return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
+    return !!(
+      control &&
+      control.invalid &&
+      (control.dirty || control.touched || isSubmitted)
+    );
   }
 }
 
 @Component({
   selector: 'task-form',
-  imports: [FormsModule, MatFormFieldModule, MatInputModule, ReactiveFormsModule, MatButtonModule, MatCardModule],
+  imports: [
+    FormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    MatButtonModule,
+    MatCardModule,
+  ],
   templateUrl: './task-form.component.html',
-  styleUrl: './task-form.component.css'
+  styleUrl: './task-form.component.css',
 })
 export class TaskFormComponent {
   taskService = inject(TaskService);
@@ -27,11 +48,13 @@ export class TaskFormComponent {
 
   onSubmit(formDirective: NgForm) {
     if (this.titleFormControl.valid && this.titleFormControl.value) {
-      this.taskService.createTask(this.titleFormControl.value).subscribe((uuid) => {
-        this.taskService.getTasks();
-        formDirective.resetForm();
-        this.titleFormControl.reset();
-      });
+      this.taskService
+        .createTask(this.titleFormControl.value)
+        .subscribe(uuid => {
+          this.taskService.getTasks();
+          formDirective.resetForm();
+          this.titleFormControl.reset();
+        });
     }
   }
 }

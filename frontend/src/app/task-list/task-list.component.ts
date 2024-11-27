@@ -10,17 +10,16 @@ import { MatCardModule } from '@angular/material/card';
   selector: 'task-list',
   imports: [MatListModule, NgFor, MatCardModule],
   templateUrl: './task-list.component.html',
-  styleUrl: './task-list.component.css'
+  styleUrl: './task-list.component.css',
 })
 export class TaskListComponent implements OnInit, OnDestroy {
-  title = "Task list";
+  title = 'Task list';
   taskService = inject(TaskService);
   subscription?: Subscription;
   tasks: Task[] = [];
 
-
   ngOnInit() {
-    this.subscription = this.taskService.tasks.subscribe((tasks) => {
+    this.subscription = this.taskService.tasks.subscribe(tasks => {
       this.tasks = tasks;
     });
     this.taskService.getTasks();
