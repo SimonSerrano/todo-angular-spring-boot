@@ -85,7 +85,7 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-This project is a simple Todo App using Spring Boot and Angular. There are many great Todo apps already on GitHub but this one is my own. This is to train myself on technologies I am not used to and keep myself up to date. The backend will depend on Spring WebFlux instead of the usual Spring MVC.
+This project is a simple Todo App using Spring Boot and Angular. There are many great Todo apps already on GitHub but this one is my own. This is to train myself on technologies I am not used to and keep myself up to date. The backend depends on Spring WebFlux instead of the usual Spring MVC.
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
