@@ -30,9 +30,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/SimonSerrano/todo-angular-spring-boot">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a>
+
 
 <h3 align="center">Simple Todo App</h3>
 
@@ -42,8 +40,6 @@
     <a href="https://github.com/SimonSerrano/todo-angular-spring-boot"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/SimonSerrano/todo-angular-spring-boot">View Demo</a>
-    ·
     <a href="https://github.com/SimonSerrano/todo-angular-spring-boot/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
     ·
     <a href="https://github.com/SimonSerrano/todo-angular-spring-boot/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
@@ -83,7 +79,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Product Name Screen Shot][product-screenshot]](https://github.com/SimonSerrano/todo-angular-spring-boot)
 
 This project is a simple Todo App using Spring Boot and Angular. There are many great Todo apps already on GitHub but this one is my own. This is to train myself on technologies I am not used to and keep myself up to date. The backend depends on Spring WebFlux instead of the usual Spring MVC.
 
