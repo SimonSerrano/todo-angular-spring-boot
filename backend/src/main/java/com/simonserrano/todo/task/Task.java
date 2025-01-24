@@ -2,16 +2,11 @@ package com.simonserrano.todo.task;
 
 import java.util.UUID;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import org.springframework.data.annotation.Id;
 
-@Entity
 public class Task {
 
   @Id
-  @GeneratedValue(strategy = GenerationType.UUID)
   private UUID id;
 
   private String title;
