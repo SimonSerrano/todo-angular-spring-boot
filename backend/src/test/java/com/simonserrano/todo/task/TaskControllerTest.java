@@ -131,7 +131,8 @@ public class TaskControllerTest {
   @Test
   public void shouldReturnNotFound() {
     UUID uuid = UUID.randomUUID();
-    when(taskService.findById(uuid)).thenThrow(new ResponseStatusException(HttpStatus.NOT_FOUND));
+    when(taskService.findById(uuid))
+        .thenThrow(new ResponseStatusException(HttpStatus.NOT_FOUND));
 
     webTestClient
         .get()
